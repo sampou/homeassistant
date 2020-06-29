@@ -1,6 +1,7 @@
 LICENSE.md
 MANIFEST.in
 README.rst
+pyproject.toml
 setup.cfg
 setup.py
 homeassistant/__init__.py
@@ -542,6 +543,8 @@ homeassistant/components/auth/.translations/uk.json
 homeassistant/components/auth/.translations/vi.json
 homeassistant/components/auth/.translations/zh-Hans.json
 homeassistant/components/auth/.translations/zh-Hant.json
+homeassistant/components/autoconfig/__init__.py
+homeassistant/components/autoconfig/config_info.py
 homeassistant/components/automatic/__init__.py
 homeassistant/components/automatic/device_tracker.py
 homeassistant/components/automatic/manifest.json
@@ -7473,6 +7476,7 @@ homeassistant/components/zwave/.translations/sv.json
 homeassistant/components/zwave/.translations/tr.json
 homeassistant/components/zwave/.translations/zh-Hans.json
 homeassistant/components/zwave/.translations/zh-Hant.json
+homeassistant/custom_components/hello_world.py
 homeassistant/generated/config_flows.py
 homeassistant/generated/ssdp.py
 homeassistant/generated/zeroconf.py
