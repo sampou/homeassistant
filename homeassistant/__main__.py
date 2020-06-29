@@ -9,6 +9,7 @@ import threading
 from typing import List
 
 from homeassistant.const import REQUIRED_PYTHON_VER, RESTART_EXIT_CODE, __version__
+from homeassistant.components.autoconfig import config_info
 
 
 def set_loop() -> None:
@@ -321,7 +322,7 @@ def main() -> int:
                 if exc.returncode != RESTART_EXIT_CODE:
                     sys.exit(exc.returncode)
 
-    args = get_arguments()
+    args =  get_arguments()
 
     if args.script is not None:
         from homeassistant import scripts
@@ -329,6 +330,12 @@ def main() -> int:
         return scripts.run(args.script)
 
     config_dir = os.path.abspath(os.path.join(os.getcwd(), args.config))
+
+
+    # 获取配置目录
+    curPath = os.path.dirname(__file__)
+    config_dir = config_info.config_path(curPath, config_dir, "--config" not in sys.argv)
+
     ensure_config_path(config_dir)
 
     # Daemon functions
