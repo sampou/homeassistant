@@ -322,7 +322,7 @@ def main() -> int:
                 if exc.returncode != RESTART_EXIT_CODE:
                     sys.exit(exc.returncode)
 
-    args =  get_arguments()
+    args = get_arguments()
 
     if args.script is not None:
         from homeassistant import scripts
