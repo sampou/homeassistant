@@ -7476,7 +7476,6 @@ homeassistant/components/zwave/.translations/sv.json
 homeassistant/components/zwave/.translations/tr.json
 homeassistant/components/zwave/.translations/zh-Hans.json
 homeassistant/components/zwave/.translations/zh-Hant.json
-homeassistant/custom_components/hello_world.py
 homeassistant/generated/config_flows.py
 homeassistant/generated/ssdp.py
 homeassistant/generated/zeroconf.py

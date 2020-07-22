@@ -24,9 +24,8 @@ def config_path(curPath: str, configPath: str, existConfig: bool) -> str:
     file = os.path.join(curPath, CONFIG_NAME)
     config = load_json(file)
     if not config:
-        content = {CONFIG_PATH: configPath}
+        config = content = {CONFIG_PATH: configPath}
         save_json(file, content)
-        config = content
         _LOGGER.info("save config file")
     else:
         if (configPath != config[CONFIG_PATH]) & (not existConfig):
@@ -35,4 +34,8 @@ def config_path(curPath: str, configPath: str, existConfig: bool) -> str:
             _LOGGER.info("update config file")
 
     _LOGGER.info("config file，config dir is %s", config[CONFIG_PATH])
+
+    if not os.path.isdir(config[CONFIG_PATH]):
+        os.makedirs(config[CONFIG_PATH], exist_ok= True)
+
     return config[CONFIG_PATH]
